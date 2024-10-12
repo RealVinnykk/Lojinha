@@ -9,8 +9,8 @@ public class CorredorBebidas implements CorredorGeral{
 
     @Override
     public String listarItems() {
-        return"itens =" + Arrays.toString(itens) +
-                "\nvalores =" + Arrays.toString(valores);
+        return"itens =" + itens.toString() +
+                "\nvalores =" + valores.toString();
     }
 
     @Override

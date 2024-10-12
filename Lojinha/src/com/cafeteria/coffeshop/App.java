@@ -1,5 +1,8 @@
 package com.cafeteria.coffeshop;
 
+import com.cafeteria.coffeshop.corredores.CorredorBebidas;
+import com.cafeteria.coffeshop.corredores.CorredorComidas;
+import com.cafeteria.coffeshop.corredores.CorredorGeral;
 import com.cafeteria.coffeshop.corredores.CorredorRemedios;
 import com.cafeteria.coffeshop.menus.MenuCaixa;
 import com.cafeteria.coffeshop.menus.MenuCorredor;
@@ -14,9 +17,7 @@ public static void main(String args [])throws Exception{
 
 
     Scanner scanner = new Scanner(System.in);
-    MenuCorredor corredor = new MenuCorredor();
-
-    CorredorRemedios remedios = new CorredorRemedios();
+    MenuCorredor geralCorredor = new MenuCorredor();
 
     System.out.println("bem vindo a loja! \nqual seu nome");
     Cliente user = new Cliente("Vinny", 50);
@@ -25,18 +26,16 @@ public static void main(String args [])throws Exception{
     user.getSaldo();
     user.getNome();
 
-    corredor.getOptions();
+    String aonde = geralCorredor.getOptions();
 
-    System.out.println("aonde voce deseja ir");
-    String aonde = scanner.nextLine();
+    System.out.println(aonde);
+
+    if(aonde.equals(geralCorredor.getSpecific(aonde))){
+    CorredorGeral corredorNovo = geralCorredor.criarCorredor(aonde);
+    corredorNovo.toString();
 
 
-    for (int i = 0; i < corredor.options.length; i++) {
-        if (aonde.equals(corredor.options[i])) {
-            
-        }
     }
-
 
     scanner.close();
 
