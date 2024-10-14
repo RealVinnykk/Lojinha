@@ -9,16 +9,36 @@ public class CorredorBebidas implements CorredorGeral{
 
     @Override
     public String listarItems() {
-        return"itens =" + itens.toString() +
-                "\nvalores =" + valores.toString();
+        return "item =" + Arrays.toString(itens) +
+                "valor =" + Arrays.toString(valores);
     }
 
     @Override
     public void gerarCorredor() {
-    itens = new String[] {"Coca-Cola", "Fanta", "Guarazinho"};
+        itens = new String[]{"COCA-COLA", "FANTA", "GUARAZINHO"};
     valores = new int[]{8, 6, 5};
     }
 
+    @Override
+    public int selecionarValor(String ITEM) {
+        for (int i = 0; i < valores.length; i++) {
+            if (ITEM.equalsIgnoreCase(itens[i])) {
+                return valores[i];
+            }
+        }
+        return 0;
+    }
+
+    @Override
+    public String selecionarItem(String ITEM) {
+        for (int i = 0; i < itens.length; i++) {
+            if (ITEM.equalsIgnoreCase(itens[i])) {
+                return itens[i];
+            }
+        }
+
+        return null;
 
 
+    }
 }

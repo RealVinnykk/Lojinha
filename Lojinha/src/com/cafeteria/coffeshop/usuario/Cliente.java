@@ -1,7 +1,5 @@
 package com.cafeteria.coffeshop.usuario;
 
-import com.sun.jdi.event.ExceptionEvent;
-
 public class Cliente extends Exception {
 
     private final String nome;
@@ -23,15 +21,14 @@ public class Cliente extends Exception {
     }
 
     public double setSaldo(double saldo) throws IllegalAccessException {
-        if (saldo <= 0) {
-            throw new IllegalAccessException("ERRO");
-        } else if (saldo > this.saldo) {
+        if (saldo <= 0) throw new IllegalAccessException("ERRO");
+        else if (saldo > this.saldo) {
             this.saldo += saldo;
         } else if (saldo <= this.saldo) {
             this.saldo -= saldo;
         }
-        System.out.println(saldo);
-        return saldo;
+        System.out.println("saldo disponivel: " + this.saldo);
+        return this.saldo;
     }
 }
 

@@ -6,21 +6,25 @@ import java.util.List;
 public class Cesta{
 
 
-    private List<Item> itensNaCesta = new ArrayList<>();
+    private List<String> itensNaCesta = new ArrayList<>();
     private int valor;
 
-    public void addItem(Item item) {
+    public void addItem(String item, int value) {
         itensNaCesta.add(item);
-        this.valor += item.getValor();
+        this.valor += value;
     }
 
     public int getValor() {
         return valor;
     }
 
-    public void getItensNaCesta() {
-        for(Item item : itensNaCesta){
-            System.out.println(item.toString());
-        }
+    public List<String> getItensNaCesta() {
+
+        return itensNaCesta;
+
+    }
+
+    public int tamanhoCesta() {
+        return itensNaCesta.size();
     }
 }

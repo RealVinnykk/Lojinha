@@ -5,4 +5,9 @@ public interface CorredorGeral {
 
     void gerarCorredor();
 
+    int selecionarValor(String ITEM);
+
+    String selecionarItem(String ITEM);
+
+
 }
